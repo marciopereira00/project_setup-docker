@@ -24,7 +24,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./laravel:/app
+      - [dir_do_proj_laravel]:/app
   phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
