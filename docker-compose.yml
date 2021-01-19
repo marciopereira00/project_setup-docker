@@ -24,7 +24,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - [dir_do_proj_laravel]:/app
+      - ./dir_do_proj_laravel:/app
   phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
@@ -62,5 +62,6 @@ services:
     ports:
       - "3001:3000"
     volumes:
-      - [dir_do_proj_node]:/usr/src/app
-    command: node /usr/src/app/app_mongo.js
+      - ./dir_do_proj_node:/usr/src/app
+    working_dir: /usr/src/app
+    command: npm run dev
